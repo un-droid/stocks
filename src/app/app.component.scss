@@ -1,0 +1,11 @@
+app-watch-list{
+    max-width: 45%;
+    margin: 0 auto;
+    display: block;
+    height: 100%;
+}
+@media only screen and (max-width: 950px){
+    app-watch-list{
+        max-width: 100%;
+    }
+}

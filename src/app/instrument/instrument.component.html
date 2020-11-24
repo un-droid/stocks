@@ -1,0 +1,39 @@
+<div class="instrument-row">
+    <div class="info-section">
+        <img class="instrument-img" [src]="instrument.imgUrl">
+        <div class="name-and-change-container">
+            <div class="instrument-name">
+                {{instrument.name}}
+            </div>
+            <div class="instrument-change" [ngClass]="instrument.currentPrice - instrument.openPrice > 0 ? 'positive-change' : 'negative-change'">
+               <div>
+                   <i  class="fas" [ngClass]="instrument.currentPrice - instrument.openPrice > 0 ? 'fa-sort-up' : 'fa-sort-down'"></i>
+                   <span>{{instrument.currentPrice - instrument.openPrice | number:'1.2-2'}} ({{getChange(instrument)}}%)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="price-section">
+        <div class="sell-price" >
+            <button class="button action-button" #sellButton [ngClass]="color" (click)="performBuySellAction(1,instrument)">
+                <div class="wrapper">
+                    <span class="number">{{getNumber(instrument.currentPrice+0.02)}}</span>
+                    .
+                    <span class="decimal">{{getDecimal(instrument.currentPrice+0.02)}}</span>
+                </div>
+            </button>
+        </div>
+        <div class="buy-price">
+            <!-- color getColorByChange -->
+            <button class="button action-button" #buyButton [ngClass]="color" (click)="performBuySellAction(0,instrument)">
+                <div class="wrapper">
+                    <span class="number">{{getNumber(instrument.currentPrice-0.02)}}</span>
+                    .
+                    <span class="decimal">{{getDecimal(instrument.currentPrice-0.02)}}</span>
+                </div>
+            </button>
+
+        </div>
+    </div>
+</div>
+<hr>

@@ -1,0 +1,15 @@
+<div class="header">
+<h3>My watchlist</h3>
+    <div class="view-controls">
+        <i class="fas fa-filter"></i>
+        <i class="fas fa-cog" (click)="sortViewBy(3)"></i>
+    </div>
+</div>
+<div class="title">
+    <span id="market" #market (click)="sortViewBy(0)">market</span>
+    <div id="buy-sell">
+        <span class="action" id="sell" #sell (click)="sortViewBy(2)">sell</span>
+        <span class="action" id="buy" #buy (click)="sortViewBy(1)">buy</span>
+    </div>
+</div>
+<app-instrument [instrument]="instrument" *ngFor="let instrument of instrumentsList; trackBy: trackFunc"></app-instrument>

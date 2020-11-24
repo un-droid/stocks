@@ -1,0 +1,39 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.view-controls{
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    .fa-cog{
+        cursor: pointer;
+    }
+}
+.title{
+    background-color: lightgray;
+    font-weight: bold;
+    color: gray;
+    text-transform: uppercase;
+    display: flex;
+    height: 50px;
+    justify-content: space-between;
+    border: 1px solid;
+    align-items: center;
+    #market{
+        padding-left: 22px;
+        cursor: pointer;
+    }
+    #buy-sell{
+        width: 220px;
+        display: flex;
+        padding: 0 10px;
+        .action{
+            width: 50%;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+}

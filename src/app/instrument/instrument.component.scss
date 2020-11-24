@@ -1,0 +1,75 @@
+$positive-color: #37b137;
+$negative-color: red;
+.instrument-row{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    .info-section{
+        display: flex;
+        .instrument-img {
+            border-radius: 5px;
+            max-width: 50px;
+            margin-right: 7px;
+        }
+        .name-and-change-container{
+            .instrument-name{
+
+            }
+            .instrument-change{
+
+            }
+            .positive-change{
+                color: $positive-color
+            }
+            .negative-change{
+                color: $negative-color;
+            }
+        }
+    }
+    .price-section{
+        display: flex;
+        .sell-price, .buy-price{
+            display: flex;
+            padding: 0 5px;
+            .action-button{
+                border: none;
+                padding: 6px 15px;
+                border-radius: 5px;
+                width: 90px;
+                height: 40px;
+                background-color: #e8e8e8;
+                &.positive-change{
+                    animation:positive 1s 1;
+                }
+                &.negative-change{
+                    animation:negative 1s 1;
+                }
+                .wrapper{
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: flex-end;
+                    position: relative;
+                    top: 4px;
+                    left: 7px;
+                    .decimal{
+                        font-size: 22px;
+                    }
+                    .number{
+                        font-size: 16px;;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes positive
+{
+    0%      {background:$positive-color; color: white;}
+    100%    {background:#e8e8e8; color: black;}
+}
+@keyframes negative
+{
+    0%      {background:$negative-color; color: white;}
+    100%    {background:#e8e8e8; color: black;}
+}
